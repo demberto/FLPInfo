@@ -2,10 +2,12 @@ import argparse
 
 from .flpinfo import FLPInfo
 
-if __name__ == "__main__":
+
+def main():
     arg_parser = argparse.ArgumentParser(prog="flpinfo", description=__doc__)
     arg_parser.add_argument(
-        "flp_or_zip", help="The location of FLP/zipped FLP to show information about."
+        "flp",
+        help="The location of FLP to show information about. Zipped FLPs are not yet supported.",
     )
     arg_parser.add_argument(
         "-v",
@@ -21,3 +23,7 @@ if __name__ == "__main__":
     )
     args = arg_parser.parse_args()
     FLPInfo(args).info()
+
+
+if __name__ == "__main__":
+    main()
