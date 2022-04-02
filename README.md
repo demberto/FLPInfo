@@ -1,5 +1,5 @@
 ![Powered by: PyFLP](https://img.shields.io/badge/powered%20by-PyFLP-blue)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/demberto/flpinfo/Build%20&%20Publish)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/demberto/flpinfo/main)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/flpinfo)
 ![PyPI](https://img.shields.io/pypi/v/flpinfo)
 ![PyPI - Status](https://img.shields.io/pypi/status/flpinfo)
@@ -9,9 +9,9 @@
 
 # FLPInfo
 
-> A CLI utility to print basic information about an FLP.
+> Prints basic information about an FL Studio project file (.flp).
 
-## Usage
+## ▶ Usage
 
 ```
 >>> flpinfo <path_to_flp>
@@ -27,23 +27,25 @@ Arrangement(s):   1 [Arrangement]
 Pattern(s):       2 [Clap, Hats]
 ```
 
-## Command-line options
+## 💲 Command-line options
 
 ```
-flpinfo [-h] [-v] [--full-lists] [--no-color] flp
+flpinfo [-h] [-v] [--no-color] flp
 
 positional arguments:
   flp     The location of FLP to show information about. Zipped FLPs are not yet supported.
 
 optional arguments:
   -h, --help     show this help message and exit
-  -v, --verbose  Display verbose logging output and full lists
   --full-lists   Lists will not appear truncated.
   --no-color     Disables colored output
 ```
 
-### [TODO](TODO.md)
+## 🚀 TODO
 
-### License
+- Long comments cause incorrect formatting
+- Zipped FLPs
+
+## 📜 License
 
 FLPInfo is licensed under the [GNU Public License v3](https://www.gnu.org/licenses/gpl-3.0.en.html).
