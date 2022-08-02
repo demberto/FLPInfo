@@ -72,29 +72,29 @@ class FLPInfo:
         channels, arrangements, patterns = [], [], []
 
         for e in events:
-            if e.id == Misc.EventID.Artists:
+            if e.id_ == Misc.EventID.Artists:
                 artists = e.to_str()
-            elif e.id == Misc.EventID.Comment:
+            elif e.id_ == Misc.EventID.Comment:
                 comments = e.to_str()
-            elif e.id == Misc.EventID.Genre:
+            elif e.id_ == Misc.EventID.Genre:
                 genre = e.to_str()
-            elif e.id == Misc.EventID.Tempo:
+            elif e.id_ == Misc.EventID.Tempo:
                 tempo = e.to_uint32() / 1000
-            elif e.id == Misc.EventID.Url:
+            elif e.id_ == Misc.EventID.Url:
                 url = e.to_str()
-            elif e.id == Misc.EventID.Version:
+            elif e.id_ == Misc.EventID.Version:
                 version = e.to_str()
-            elif e.id == Channel.EventID.New:
+            elif e.id_ == Channel.EventID.New:
                 self.__new_channel = True
-            elif e.id == Channel.EventID.DefaultName:
+            elif e.id_ == Channel.EventID.DefaultName:
                 channels.append(e.to_str())
-            elif e.id == Channel.EventID.Name:
+            elif e.id_ == Channel.EventID.Name:
                 if self.__new_channel:
                     channels[-1] = e.to_str()
                     self.__new_channel = False
-            elif e.id == Arrangement.EventID.Name:
+            elif e.id_ == Arrangement.EventID.Name:
                 arrangements.append(e.to_str())
-            elif e.id == Pattern.EventID.Name:
+            elif e.id_ == Pattern.EventID.Name:
                 patterns.append(e.to_str())
 
         self.__print_col("Title:           ", self.__green(title))
