@@ -1,48 +1,27 @@
 [build-system]
-requires = ["setuptools>=51", "wheel"]
+requires = ["setuptools", "setuptools_scm[toml]"]
 build-backend = "setuptools.build_meta"
 
-[tool.mypy]
-ignore_missing_imports = true
+[project]
+name = "flpinfo"
+description = "CLI utility for examining FL Studio files"
+authors = [{ name = "demberto", email = "demberto@proton.me" }]
+requires-python = ">=3.7"
+license = { file = "LICENSE" }
+readme = "README.md"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+dependencies = ["pyflp >=2.0.0", "rich >=13.3.3", "typer >=0.7.0"]
+dynamic = ["version"]
 
-[tool.tbump]
-# Uncomment this if your project is hosted on GitHub:
-github_url = "https://github.com/demberto/FLPInfo/"
-
-[tool.tbump.version]
-current = "0.1.1"
-
-# Example of a semver regexp.
-# Make sure this matches current_version before
-# using tbump
-regex = '''
-  (?P<major>\d+)
-  \.
-  (?P<minor>\d+)
-  \.
-  (?P<patch>\d+)
-  '''
-
-[tool.tbump.git]
-message_template = "Bump to {new_version}"
-tag_template = "v{new_version}"
-
-# For each file to patch, add a [[tool.tbump.file]] config
-# section containing the path of the file, relative to the
-# tbump.toml location.
-[[tool.tbump.file]]
-src = "VERSION"
-
-# You can specify a list of commands to
-# run after the files have been patched
-# and before the git commit is made
-
-[[tool.tbump.before_commit]]
-name = "check changelog"
-cmd = "git grep -q {new_version} CHANGELOG.md"
-
-# Or run some commands after the git tag and the branch
-# have been pushed:
-#  [[tool.tbump.after_push]]
-#  name = "publish"
-#  cmd = "./publish.sh"
+[project.scripts]
+flpinfo = "flpinfo.__main__:app"

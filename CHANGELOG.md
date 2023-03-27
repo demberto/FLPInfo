@@ -23,7 +23,7 @@ This release fixes bugs caused by PyFLP's breaking changes.
 ### Removed
 
 - `flpinfo.py`; merged in `__main__.py`.
-- `TODO.md`
+- `TODO.md`.
 
 ## [0.1.0]
 
